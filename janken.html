@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>LET's TRY JANKEN GURICO</title>
+</head>
+
+<!-- //ここから5月11日課題追加 -->
+
+<body>
+  <header>
+    <h1>LET's TRY JANKEN GURICO</h1>
+  </header>
+  <main>
+    <ul>
+      <li id="gu_btn">グー</li>
+      <li id="cho_btn">チョキ</li>
+      <li id="par_btn">パー</li>
+    </ul>
+    <div id="com_hand">コンピュータの出した手は？</div>
+    <div id="result">結果は？</div>
+    <table>
+      <tr><!-- 3つのth -->
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+      </tr>
+      <tr><!-- 3つのtd -->
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr><!-- 3つのtd -->
+        <td> </td>
+        <td class="td_box_1"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr><!-- 3つのtd -->
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr><!-- 3つのtd -->
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+    </table>
+
+  </main>
+
+  <footer>フッター</footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+
+    $("#gu_btn").on("click", function () {
+      const min = 0;
+      const max = 99;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomNumber);
+
+      if (1 <= randomNumber && randomNumber <= 30) {
+        //  alert("グー");
+        $("#com_hand").text("グー")
+        $("#result").text("あいこ")
+        $("#result").animate(
+          {
+            fontSize: 30,
+          },
+          1000
+        );
+      } else if (31 <= randomNumber && randomNumber <= 60) {
+        //  alert("チョキ");
+        $("#com_hand").text("チョキ")
+        $("#result").text("勝ち（３マス進む）")
+        new Audio('win.mp3').play();
+        $("#result").animate(
+          {
+            fontSize: 64,
+          },
+          1000
+        );
+
+      } else {
+        //  alert("パー");
+        $("#com_hand").text("パー")
+        $("#result").text("負け")
+        new Audio('lose_lose.mp3').play();
+        $("#result").animate(
+          {
+            fontSize: 20,
+          },
+          1000
+        );
+      }
+
+    })
+
+    $("#cho_btn").on("click", function () {
+      const min = 0;
+      const max = 99;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomNumber);
+
+      //0から99が出てくる
+      //0~30⇒グー
+      //31~60⇒チョキ
+      //61~99⇒パー
+
+      if (1 <= randomNumber && randomNumber <= 30) {
+        //  alert("グー");
+        $("#com_hand").text("グー")
+        $("#result").text("負け")
+        new Audio('lose.mp3').play();
+        $("#result").animate(
+          {
+            fontSize: 20,
+          },
+          1000
+        );
+      } else if (31 <= randomNumber && randomNumber <= 60) {
+        //  alert("チョキ");
+        $("#com_hand").text("チョキ")
+        $("#result").text("あいこ")
+        $("#result").animate(
+          {
+            fontSize: 30,
+          },
+          1000
+        );
+      } else {
+        //  alert("パー");
+        $("#com_hand").text("パー")
+        $("#result").text("勝ち（６マス進む）")
+        new Audio('win.mp3').play();
+        $("#result").animate(
+          {
+            fontSize: 64,
+          },
+          1000
+        );
+      }
+
+    })
+
+    $("#par_btn").on("click", function () {
+      const min = 0;
+      const max = 99;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomNumber);
+
+      //0から99が出てくる
+      //0~30⇒グー
+      //31~60⇒チョキ
+      //61~99⇒パー
+
+      if (1 <= randomNumber && randomNumber <= 30) {
+        //  alert("グー");
+        $("#com_hand").text("グー")
+        $("#result").text("勝ち（６マス進む）")
+        new Audio('win.mp3').play();
+        $("#result").animate(
+          {
+            fontSize: 64,
+          },
+          1000
+        );
+      } else if (31 <= randomNumber && randomNumber <= 60) {
+        //  alert("チョキ");
+        $("#com_hand").text("チョキ")
+        $("#result").text("負け")
+        new Audio('lose.mp3').play();
+        $("#result").animate(
+          {
+            fontSize: 20,
+          },
+          1000
+        );
+      } else {
+        //  alert("パー");
+        $("#com_hand").text("パー")
+        $("#result").text("あいこ")
+        $("#result").animate(
+          {
+            fontSize: 30,
+          },
+          1000
+        );
+      }
+
+    })
+
+  </script>
+</body>
+
+
+
+<!-- 5月1日提出済
+  <body>
+  <header>
+    <h1>じゃんけん</h1>
+  </header>
+
+  <main>
+    <ul>
+      <li id="gu_btn">グー</li>
+      <li id="cho_btn">チョキ</li>
+      <li id="par_btn">パー</li>
+    </ul>
+    <div id="com_hand">コンピュータの出した手は？</div>
+    <div id="result">結果は？</div>
+  </main>
+
+  <footer>フッター</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script> -->
+<!-- //ここに処理を追加
+
+    $("#gu_btn").on("click", function () {
+      const min = 0;
+      const max = 99;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomNumber);
+
+      //0から99が出てくる
+      //0~30⇒グー
+      //31~60⇒チョキ
+      //61~99⇒パー
+
+      if (1 <= randomNumber && randomNumber <= 30) {
+        //  alert("グー");
+        $("#com_hand").text("グー")
+        $("#result").text("あいこ")
+      } else if (31 <= randomNumber && randomNumber <= 60) {
+        //  alert("チョキ");
+        $("#com_hand").text("チョキ")
+        $("#result").text("あなたの勝ち")
+      } else {
+        //  alert("パー");
+        $("#com_hand").text("パー")
+        $("#result").text("あなたの負け")
+      }
+
+    })
+
+    $("#cho_btn").on("click", function () {
+      const min = 0;
+      const max = 99;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomNumber);
+
+      //0から99が出てくる
+      //0~30⇒グー
+      //31~60⇒チョキ
+      //61~99⇒パー
+
+      if (1 <= randomNumber && randomNumber <= 30) {
+        //  alert("グー");
+        $("#com_hand").text("グー")
+        $("#result").text("あなたの負け")
+      } else if (31 <= randomNumber && randomNumber <= 60) {
+        //  alert("チョキ");
+        $("#com_hand").text("チョキ")
+        $("#result").text("あいこ")
+      } else {
+        //  alert("パー");
+        $("#com_hand").text("パー")
+        $("#result").text("あなたの勝ち")
+      }
+
+    })
+
+    $("#par_btn").on("click", function () {
+      const min = 0;
+      const max = 99;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomNumber);
+
+      //0から99が出てくる
+      //0~30⇒グー
+      //31~60⇒チョキ
+      //61~99⇒パー
+
+      if (1 <= randomNumber && randomNumber <= 30) {
+        //  alert("グー");
+        $("#com_hand").text("グー")
+        $("#result").text("あなたの勝ち")
+      } else if (31 <= randomNumber && randomNumber <= 60) {
+        //  alert("チョキ");
+        $("#com_hand").text("チョキ")
+        $("#result").text("あなたの負け")
+      } else {
+        //  alert("パー");
+        $("#com_hand").text("パー")
+        $("#result").text("あいこ")
+      }
+
+    })
+  </script> -->
+<!-- 
+</body> -->
+<!-- ここまで5月1日提出 -->
+
+</html>

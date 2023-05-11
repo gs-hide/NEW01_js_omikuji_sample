@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>おみくじ</title>
+</head>
+
+<body>
+  <header>
+    <h1>おみくじ</h1>
+  </header>
+
+  <main>
+    <ul>
+      <li id="pull">おみくじを引く</li>
+    </ul>
+    <p id="echo">結果は？</p>
+  </main>
+
+  <footer>フッター</footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    // ここに処理を追加
+    //document.getElementById("pull").addEventListener("click", function () {
+    //  alert("ok");
+    //})
+
+    //selector（どこを）$("")
+    //event（どうしたときに）.on("")
+    //method（どうする）{}
+
+    //$("#pull").on("click", function () {
+    //  alert("ok");
+    //})
+    //ここからおみくじアプリ作成
+    //jQuery活用 の書き方と動き方
+    //$("#id").on("click", function () {
+    //id部分をpullに替える
+    $("#pull").on("click", function () {
+      const min = 0;
+      const max = 99;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomNumber);
+
+      //0から99が出てくる
+      //0~10⇒大吉
+      //11~30⇒中吉
+      //31~60⇒小吉
+      //61~90⇒凶
+      //91~99⇒大凶
+
+      if (1 <= randomNumber && randomNumber <= 10) {
+        //  alert("大吉");
+        $("#echo").text("大吉")
+      } else if (11 <= randomNumber && randomNumber <= 30) {
+        //  alert("中吉");
+        $("#echo").text("中吉")
+      } else if (31 <= randomNumber && randomNumber <= 60) {
+        //  alert("小吉")
+        $("#echo").text("小吉")
+      } else if (61 <= randomNumber && randomNumber <= 90) {
+        //  alert("凶")
+        $("#echo").text("凶")
+        $("#echo").css("color", "Red");
+      } else {
+        //  alert("大凶");
+        $("#echo").text("大凶")
+      }
+
+    })
+
+    //const min = 0;
+    //const max = 99;
+    //const randomNumber = Math.floor(Math.random() * max - min + 1) + min;
+    //console.log(randomNumber);
+    // ここに処理を追加
+
+    //if (randomNumber === 0) {
+    //  $("#button").on("click", function () {
+
+    //  });
+    //  if (randomNumber === 0) {
+    //    alert("大吉");
+    //  } else if (1 <= randomNumber && randomNumber <= 4) {
+    //    alert("中吉");
+    //  } else if (5 <= randomNumber && randomNumber <= 10) {
+    //    alert("小吉");
+    //  } else if (11 <= randomNumber && randomNumber <= 20) {
+    //    alert("凶");
+    //  } else
+    //    alert("大凶");
+    //}
+  </script>
+
+</body>
+
+</html>

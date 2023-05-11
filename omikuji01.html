@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おみくじ練習</title>
+</head>
+
+<body>
+  <script>
+    // ここに処理を追加（条件分岐）
+
+    //const min = 0;
+    //const max = 4;
+    //const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    //console.log(randomNumber);
+
+    //0から4が出てくる
+    //0⇒大吉
+    //1⇒中吉
+    //2⇒小吉
+
+    //if (randomNumber === 0) {
+    //  alert("0です!");
+    //} else if (randomNumber === 1) {
+    //  alert("1です!");
+    //} else {
+    //  alert("それ以外!");
+    //}
+
+    //練習①
+    //const min = 0;
+    //const max = 4;
+    //const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    //console.log(randomNumber);
+
+    //0から4が出てくる
+    //0⇒大吉
+    //1⇒中吉
+    //2⇒小吉
+    //3⇒凶
+    //4⇒大凶
+
+    //if (randomNumber === 0) {
+    //  alert("大吉");
+    //} else if (randomNumber === 1) {
+    //  alert("中吉");
+    //} else if (randomNumber === 2) {
+    //  alert("小吉")
+    //} else if (randomNumber === 3) {
+    //  alert("凶")
+    //} else {
+    //  alert("大凶");
+    //}
+
+    //練習②
+    const min = 0;
+    const max = 99;
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(randomNumber);
+
+    //0から99が出てくる
+    //0~10⇒大吉
+    //11~30⇒中吉
+    //31~60⇒小吉
+    //61~90⇒凶
+    //91~99⇒大凶
+
+    if (1 <= randomNumber && randomNumber <= 10) {
+      alert("大吉");
+    } else if (11 <= randomNumber && randomNumber <= 30) {
+      alert("中吉");
+    } else if (31 <= randomNumber && randomNumber <= 60) {
+      alert("小吉")
+    } else if (61 <= randomNumber && randomNumber <= 90) {
+      alert("凶")
+    } else {
+      alert("大凶");
+    }
+
+  </script>
+</body>
+
+</html>
